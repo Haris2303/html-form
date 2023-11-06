@@ -641,4 +641,110 @@ Ini isi text awal</textarea
 </form>
 ```
 
+**Multiple**
+
+- Salah satu kelebihan dibandingkan radio type, di dalam select tag, jika misal kita bisa memilih beberapa opsi pilihan seperti checkbox, kita bisa gunakan atribut `multiple`
+- Untuk menentukan seberapa besar tampilan ketika menggunakan mode multiple, kita bisa gunakan atribut `size`
+
+**Kode Multiple:**
+
+```html
+<form action="">
+  <label for="hobby">Hobby: </label>
+  <select name="hobby" id="hobby" multiple size="2">
+    <option value="coding" selected>Coding</option>
+    <option value="drawing" selected>Drawing</option>
+    <option value="gaming" selected>Gaming</option>
+  </select>
+  <button type="submit">Simpan</button>
+</form>
+```
+
+**Option Group Tag**
+
+- Saat pilihan option sangat banyak, kadang ada baiknya kita buat option dalam grup
+- Hal ini akan membuat pengguna lebih mudah ketika melakukan pemilihan
+- Kita bisa bungkus option dalam grup menggunakan `optgroup` tag
+- Dan untuk menambahkan deskripsi grup, kita bisa gunakan atribut label
+
+**Kode Option Group:**
+
+```html
+<form action="">
+  <label for="hobby">Hobby: </label>
+  <select name="hobby" id="hobby">
+    <optgroup label="coding">
+      <option value="java">Java</option>
+      <option value="javascript">Javascript</option>
+      <option value="php">PHP</option>
+    </optgroup>
+    <optgroup label="gaming">
+      <option value="free_fire">Free Fire</option>
+      <option value="pubg">PUBG</option>
+      <option value="mobile_legend">Mobile Legend</option>
+    </optgroup>
+    <optgroup label="Drawing">
+      <option value="arsitecture">Arsitecture</option>
+      <option value="structural_drawing">Structural Drawing</option>
+      <option value="komic">Komic</option>
+    </optgroup>
+  </select>
+  <button type="submit">Simpan</button>
+</form>
+```
+
+## Data List Tag
+
+- Saat melakukan pencarian di Google misalnya, kita sering melihat rekomendasi berupa autocomplete kata-kata yang ingin kita cari
+- Saat kita membuat input type text, kita bisa menambahkan sumber data yang bisa dijadikan sebagai rekomendasi input value, juga autocomplete
+- Kita bisa menggunakan `datalist` tag
+- Di dalam `datalist` tag, kita bisa gunakan option tag
+- Untuk menghubungkan dari input type text ke datalist, kita bisa menggunakan atribut list yang mengacu ke `id` datalist
+
+**Kode Data List Tag:**
+
+```html
+<form action="">
+  <label for="hobby">Hobby: </label>
+  <input type="text" name="hobby" id="hobby" list="hobbies"> <br>
+  <button type="submit">Simpan</button>
+
+  <datalist>
+    <option value="coding">Coding</option>
+    <option value="gaming">Gaming</option>
+    <option value="drawing">Drawing</option>
+  </datalist>
+</form>
+```
+
+## Field Set Tag
+
+- Tag `fieldset` digunakan untuk membungkus / grouping beberapa input sehingga lebih mudah untuk dimengerti ketika dilihat oleh pengguna
+- Menggunakan fieldset tag sangat baik ketika misal input data sangat banyak, dan kita ingin melakukan grouping input data yang sesuai
+- Contoh ketika registrasi, dibutuhkan identitas, alamat, dan lain-lain, kita bisa grouping berdasarkan input data yang sesuai
+
+**Legend Tag**
+
+- Saat menggunakan `fieldset` tag, biasanya kita akan menambahkan informasi berupa deskripsi group
+- Untuk menambahkan informasi itu, kita bisa menggunakan `legend` tag
+
+**Kode Field Set Tag:**
+
+```html
+<form action="">
+  <fieldset>
+    <legend>Identitas</legend>
+    <label for="nama">Nama: </label> <input type="text" name="nama" id="nama"> <br>
+    <label for="email">Email: </label> <input type="email" name="email" id="email"> <br>
+    <label for="telepon">Telepon: </label> <input type="tel" name="telepon" id="telepon" pattern="[0-9]{5,20}"> <br>
+  </fieldset>
+  <fieldset>
+    <legend>Alamat</legend>
+    <label for="jalan">Jalan: </label> <input type="text" name="jalan" id="jalan"> <br>
+    <label for="kota">Kota: </label> <input type="text" name="kota" id="kota"> <br>
+    <label for="provinsi">Provinsi: </label> <input type="text" name="provinsi" id="provinsi"> <br>
+  </fieldset>
+</form>
+```
+
 > Source Material [Programmer Zaman Now](https://www.programmerzamannow.com)
